@@ -23,6 +23,15 @@ python neural_style/neural_style.py eval --content-image </path/to/content/image
 * `--content-scale`: factor for scaling down the content image if memory is an issue (eg: value of 2 will halve the height and width of content-image)
 * `--cuda`: set it to 1 for running on GPU, 0 for CPU.
 
+With webcam
+```
+python neural_style/demo.py eval --model </path/to/saved/model> --cuda 1 --imagesize 1.5
+```
+* `--cuda`: set it to 1 for running on GPU, 0 for CPU.
+* `--imagesize`: a resizing factor to get a bigger image for the same computational power.
+The model has been temporarely hardcoded (line 89) in order to give a list of models to choose and switch from
+
+
 Train model
 ```bash
 python neural_style/neural_style.py train --dataset </path/to/train-dataset> --style-image </path/to/style/image> --save-model-dir </path/to/save-model/folder> --epochs 2 --cuda 1
